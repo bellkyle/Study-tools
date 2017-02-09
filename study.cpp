@@ -51,13 +51,20 @@ void Study::shuffleTerms()
   }
 }
 
-int main()
+void Study::quiz()
 {
-  string fileName = "defn.txt";
-  Study study;
-  study.read(fileName);
-  study.print();
-  study.shuffleTerms();
-  study.print();
-  return 0;
+  string word;
+  for(int i = 0; i < count; i++)
+  {
+    cout << terms[i].getDefinition() << endl;
+    cout << "What is the word to this definition?" << endl;
+    getline(cin, word);
+    if(word == terms[i].getKeyWord())
+      cout << "That is correct!" << endl;
+    else
+    {
+      cout << "That is incorrect, the correct answer is:\n"
+           << terms[i].getKeyWord() << endl;
+    }
+  }
 }

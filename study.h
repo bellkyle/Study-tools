@@ -15,6 +15,7 @@ public:
   void read(string fileName);
 
   void shuffleTerms();
+  void quiz();
 
 private:
   static const int SIZE = 100;
